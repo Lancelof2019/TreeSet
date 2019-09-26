@@ -1,0 +1,34 @@
+In the Comparator there is one method to give the container (TreeSet) the possibility to 
+execute the compare function.
+
+The key is the feeback value or return value of the function  int compare(Object obj1,Object2 obj2){}.
+But the precondiciton is that the treeset must absorb the object from the class which implements interface of Comparator.
+
+For exmaple ：
+Public class MyTreeSet{
+@Override
+public int compare(Object obj1,Object obj2){
+
+Person p1=(Person)obj1;
+
+Person p2=(Person)obj1;
+
+int iden=p1.getName().compareTo(p2.getName())//Normally ,String object can  call the function of compareTo.
+
+if(iden==0){
+if(p1.Age>p2.Age)
+return 1;
+if(p1.Age<p2.Age)
+return -1;
+return 0;
+
+       }
+
+   return   iden;    }
+
+}
+
+
+
+
+
